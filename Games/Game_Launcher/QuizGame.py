@@ -41,7 +41,7 @@ movies = [
     Question("For what movie did Tom Hanks score his first Academy Award nomination? >", ["big"], 1),
     Question("The head of what kind of animal is front-and-center in an infamous scene from The Godfather? >", ["horse", "a horse", "horse head", "a horse head"], 1),
     Question("In what 1976 thriller does Robert De Niro famously say 'You talkin to me?'? >", ["taxi driver"], 1),
-    Question("What's the name of the anthemic dance near the beginning of The Rocky Horror Picture Show? >", ["the time warp", "timr warp"], 1),
+    Question("What's the name of the anthemic dance near the beginning of The Rocky Horror Picture Show? >", ["the time warp", "time warp"], 1),
     Question("What Hollywood movie star plays himself in Zombieland? >", ["bill murray"], 1),
     Question("What is the highest-grossing R-rated movie of all time? >", ["joker"], 1),
     Question("What 1994 crime film revitalized John Travolta's career? >", ["pulp fiction"], 1),
