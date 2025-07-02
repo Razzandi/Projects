@@ -1,4 +1,5 @@
 #! /usr/bin/env python3
+import random
 
 class MyStack:
     def __init__(self,initial_values=None):
@@ -23,7 +24,6 @@ class MyStack:
 # Demonstrate each of the functions in a main method
 # Create stack with 5 random values between 0-100
 def main():
-    import random
     initial_values = [random.randint(0,100) for _ in range(5)]
     stack = MyStack(initial_values)
     print("Initial stack:", stack.theStack)
