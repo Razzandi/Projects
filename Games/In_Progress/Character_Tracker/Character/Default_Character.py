@@ -189,4 +189,3 @@ class Character:
         @notes.setter
         def notes(self, value):
             self._notes = value
-

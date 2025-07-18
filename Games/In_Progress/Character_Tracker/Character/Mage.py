@@ -7,7 +7,7 @@ class Mage(Default_Character.Character):
         self._spellbook = []
         self._familiar = None
         self._elemental_affinity = "Fire"
-        self._rituals = []  # Add this line
+        self._rituals = []
 
     # Unique member variables
     @property
