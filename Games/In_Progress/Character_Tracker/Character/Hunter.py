@@ -3,6 +3,7 @@ import Default_Character
 class Hunter(Default_Character.Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Hunter", _level)
+        self._stamina = 100
         self._pet = None
         self._traps = []
         self._bow_type = "Longbow"
@@ -13,6 +14,12 @@ class Hunter(Default_Character.Character):
         
 
     # Unique member variables
+    @property
+    def stamina(self):
+        return self._stamina
+    @stamina.setter
+    def stamina(self, value):
+        self._stamina = value
     @property
     def pet(self):
         return self._pet
