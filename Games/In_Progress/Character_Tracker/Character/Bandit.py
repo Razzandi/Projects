@@ -61,3 +61,89 @@ class Bandit(Character):
     @ransom_skills.setter
     def ransom_skills(self, value):
         self._ransom_skills = value
+
+    # Unique functions
+    def steal(self, target):
+        """
+        Attempts to steal loot from a target.
+
+        Parameters:
+            target (str): The target to steal from.
+
+        Returns:
+            None
+        """
+        print(f"{self._name} attempts to steal from {target} using stealth skill {self._stealth}.")
+
+    def bribe_guard(self, amount):
+        """
+        Bribes a guard with a specified amount of loot.
+
+        Parameters:
+            amount (int): The amount of loot to use for bribery.
+
+        Returns:
+            None
+        """
+        if len(self._loot) >= amount:
+            print(f"{self._name} bribes a guard with {amount} loot items.")
+            self._loot = self._loot[amount:]
+        else:
+            print(f"{self._name} does not have enough loot to bribe the guard.")
+
+    def plan_escape(self, route):
+        """
+        Plans an escape using a specified route.
+
+        Parameters:
+            route (str): The escape route to use.
+
+        Returns:
+            None
+        """
+        if route in self._escape_routes:
+            print(f"{self._name} plans an escape through the {route}.")
+        else:
+            print(f"{self._name} does not know the escape route: {route}.")
+
+    def ransom_hostage(self, hostage, skill):
+        """
+        Attempts to ransom a hostage using a specified skill.
+
+        Parameters:
+            hostage (str): The name of the hostage.
+            skill (str): The ransom skill to use.
+
+        Returns:
+            None
+        """
+        if skill in self._ransom_skills:
+            print(f"{self._name} uses {skill} to ransom {hostage}.")
+        else:
+            print(f"{self._name} does not possess the ransom skill: {skill}.")
+
+    def expand_gang(self, number):
+        """
+        Expands the gang by a specified number of members.
+
+        Parameters:
+            number (int): The number of new members to add.
+
+        Returns:
+            None
+        """
+        self._gang_size += number
+        print(f"{self._name} expands the gang by {number} members. Total gang size: {self._gang_size}.")
+
+    def relocate_hideout(self, new_location):
+        """
+        Relocates the bandit's hideout to a new location.
+
+        Parameters:
+            new_location (str): The new hideout location.
+
+        Returns:
+            None
+        """
+        self._hideout_location = new_location
+        print(f"{self._name} relocates the hideout to {new_location}.")
