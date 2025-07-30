@@ -2,7 +2,7 @@
 
 class Character:
         _name = "Name"
-        _char_class = "Villager" #Turn this into an enum later
+        _char_class = "Villager" #Ticket#7:Turn this into an enum
         _level = 1
         _inventory = []
         _abilities = {}
