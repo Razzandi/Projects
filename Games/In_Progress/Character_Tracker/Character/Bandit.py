@@ -1,8 +1,9 @@
 from Default_Character import Character
+from CharacterClass import CharacterClass
 
 class Bandit(Character):
     def __init__(self, _name, _level=1):
-        super().__init__(_name, "Bandit", _level)
+        super().__init__(_name, CharacterClass.BANDIT, _level)
         self._stealth = 80
         self._notoriety = 50
         self._preferred_weapon = "Dagger"
