@@ -1,6 +1,6 @@
-import Default_Character
+from Default_Character import Character
 
-class Warrior(Default_Character.Character):
+class Warrior(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Warrior", _level)
         self._strength = 100
@@ -108,13 +108,6 @@ class Warrior(Default_Character.Character):
     def wield_weapon(self, weapon):
         return f"{self.name} wields a {weapon} with skill level {self._weapon_skill}."
     
-    def level_up(self):
-        super().level_up()
-        self._strength += 5
-        self._endurance += 5
-        self._weapon_skill += 3
-        return f"{self.name} has leveled up! Strength: {self._strength}, Endurance: {self._endurance}, Weapon Skill: {self._weapon_skill}."
-        
     def show_status(self):
         return f"Warrior: {self._name}, Level: {self._level}, Strength: {self._strength}, Endurance: {self._endurance}, Weapon Skill: {self._weapon_skill}, Armor Type: {self._armor_type}, Combat Stance: {self._combat_stance}"
     

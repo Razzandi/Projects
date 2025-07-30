@@ -1,6 +1,6 @@
-import Default_Character
+from Default_Character import Character
 
-class Priest(Default_Character.Character):
+class Priest(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Priest", _level)
         self._faith = 100

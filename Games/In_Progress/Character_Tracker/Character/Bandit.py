@@ -1,6 +1,6 @@
-import Default_Character
+from Default_Character import Character
 
-class Bandit(Default_Character.Character):
+class Bandit(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Bandit", _level)
         self._stealth = 80
