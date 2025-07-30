@@ -11,7 +11,6 @@ class Paladin(Character):
         self._sacred_oath = "Oath of Devotion"
         self._healing_abilities = ["Lay on Hands", "Cure Wounds"]
         
-
     # Unique member variables
     @property
     def faith(self):

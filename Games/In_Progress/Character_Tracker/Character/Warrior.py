@@ -12,7 +12,6 @@ class Warrior(Character):
         self._special_moves = ["Power Strike", "Shield Bash"]
         self._war_horn = "Dragon's Roar"
         
-
     # Unique member variables
     @property
     def strength(self):

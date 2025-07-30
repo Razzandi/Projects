@@ -11,7 +11,6 @@ class Priest(Character):
         self._healing_abilities = ["Heal", "Bless"]
         self._rituals = ["Sanctify", "Consecrate"]
         
-
     # Unique member variables
     @property
     def faith(self):

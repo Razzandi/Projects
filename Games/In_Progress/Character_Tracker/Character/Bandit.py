@@ -12,7 +12,6 @@ class Bandit(Character):
         self._escape_routes = ["Sewer", "Forest Path"]
         self._ransom_skills = ["Negotiation", "Intimidation"]
         
-
     # Unique member variables
     @property
     def stealth(self):

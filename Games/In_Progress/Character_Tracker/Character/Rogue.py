@@ -12,7 +12,6 @@ class Rogue(Character):
         self._traps_disarmed = 10
         self._evasion_ability = 80
         
-
     # Unique member variables
     @property
     def stealth(self):

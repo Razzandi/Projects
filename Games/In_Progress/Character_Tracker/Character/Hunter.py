@@ -11,7 +11,6 @@ class Hunter(Character):
         self._preferred_hunting_ground = "Forest"
         self._hunting_techniques = ["Stealth", "Tracking"]
         self._survival_gear = ["Knife", "Rope"]
-        
 
     # Unique member variables
     @property
