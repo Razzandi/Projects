@@ -5,6 +5,7 @@ from CharacterClass import CharacterClass
 class Character:
         _name = "Name"
         _char_class = CharacterClass.VILLAGER  # Use enum instead of string
+
         _level = 1
         _inventory = []
         _abilities = {}

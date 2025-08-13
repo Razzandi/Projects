@@ -4,6 +4,7 @@ from CharacterClass import CharacterClass
 class Warrior(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, CharacterClass.WARRIOR, _level)
+
         self._strength = 100
         self._endurance = 90
         self._weapon_skill = 85
