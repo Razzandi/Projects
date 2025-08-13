@@ -1,9 +1,9 @@
 from Default_Character import Character
-from CharacterClass import CharacterClass
 
 class Rogue(Character):
     def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.ROGUE, _level)
+        super().__init__(_name, "Rogue", _level)
+
         self._stealth = 90
         self._agility = 85
         self._lockpicking_skill = 75
@@ -343,7 +343,8 @@ class Rogue(Character):
         if self.lockpicking_skill >= chest_difficulty:
             print(f"{self._name} successfully lockpicks the chest and finds valuable items inside!")
         else:
-            print(f"{self._name} fails to lockpicking the chest.")
+            print(f"{self._name} fails to lockpick the chest.")
+
 
     def backflip_escape(self):
         """

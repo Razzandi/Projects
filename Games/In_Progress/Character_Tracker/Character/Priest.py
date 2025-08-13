@@ -1,9 +1,9 @@
 from Default_Character import Character
-from CharacterClass import CharacterClass
 
 class Priest(Character):
     def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.PRIEST, _level)
+        super().__init__(_name, "Priest", _level)
+
         self._faith = 100
         self._holy_symbol = "Ankh"
         self._divine_spells = []

@@ -1,10 +1,11 @@
+
 from CharacterClass import CharacterClass
 
 # Create Base Character class
-
 class Character:
         _name = "Name"
-        _char_class = CharacterClass.VILLAGER  # Use enum instead of string
+        _char_class = "Villager" #Ticket#7:Turn this into an enum
+
         _level = 1
         _inventory = []
         _abilities = {}
@@ -27,7 +28,8 @@ class Character:
         _enemies = []
         _notes = []
 
-        def __init__(self, _name, _char_class=CharacterClass.VILLAGER, _level=1):
+        def __init__(self, _name, _char_class, _level=1):
+
             self._name = _name
             self._char_class = _char_class
             self._level = _level
