@@ -1,8 +1,9 @@
 from Default_Character import Character
+from CharacterClass import CharacterClass
 
 class Rogue(Character):
     def __init__(self, _name, _level=1):
-        super().__init__(_name, "Rogue", _level)
+        super().__init__(_name, CharacterClass.ROGUE, _level)
 
         self._stealth = 90
         self._agility = 85

@@ -1,8 +1,9 @@
 from Default_Character import Character
+from CharacterClass import CharacterClass
 
 class Bandit(Character):
     def __init__(self, _name, _level=1):
-        super().__init__(_name, "Bandit", _level)
+        super().__init__(_name, CharacterClass.BANDIT, _level)
 
         self._stealth = 80
         self._notoriety = 50
@@ -61,7 +62,6 @@ class Bandit(Character):
         return self._ransom_skills
     @ransom_skills.setter
     def ransom_skills(self, value):
-
         self._ransom_skills = value
 
     # Unique functions
@@ -149,3 +149,4 @@ class Bandit(Character):
         """
         self._hideout_location = new_location
         print(f"{self._name} relocates the hideout to {new_location}.")
+
