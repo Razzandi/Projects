@@ -3,6 +3,7 @@ from Default_Character import Character
 class Hunter(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Hunter", _level)
+
         self._stamina = 100
         self._pet = None
         self._traps = []

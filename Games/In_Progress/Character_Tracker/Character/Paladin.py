@@ -3,6 +3,7 @@ from Default_Character import Character
 class Paladin(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Paladin", _level)
+
         self._faith = 100
         self._holy_symbol = "Cross"
         self._divine_spells = []

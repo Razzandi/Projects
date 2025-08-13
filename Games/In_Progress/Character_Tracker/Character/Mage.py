@@ -3,6 +3,7 @@ from Default_Character import Character
 class Mage(Character):
     def __init__(self, _name, _level=1):
         super().__init__(_name, "Mage", _level)
+
         self._mana = 100
         self._spellbook = []
         self._familiar = None
