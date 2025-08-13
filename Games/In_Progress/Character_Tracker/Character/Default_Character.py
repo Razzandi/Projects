@@ -1,4 +1,4 @@
-from CharacterClass import CharacterClass
+from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 # Create Base Character class
 

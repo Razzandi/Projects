@@ -1,5 +1,5 @@
-from Default_Character import Character
-from CharacterClass import CharacterClass
+from default_character import Character
+from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 class Priest(Character):
     def __init__(self, _name, _level=1):
