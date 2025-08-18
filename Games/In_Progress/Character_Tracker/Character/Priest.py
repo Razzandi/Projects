@@ -2,62 +2,67 @@ from default_character import Character
 from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 class Priest(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.PRIEST, _level)
-
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.PRIEST, level)
         self._faith = 100
         self._holy_symbol = "Ankh"
-        self._divine_spells = []
+        self._divine_spell_list = []
         self._cleric_domain = "Life"
         self._sacred_text = "Book of Light"
-        self._healing_abilities = ["Heal", "Bless"]
-        self._rituals = ["Sanctify", "Consecrate"]
-        
-    # Unique member variables
+        self._healing_ability_list = ["Heal", "Bless"]
+        self._ritual_list = ["Sanctify", "Consecrate"]
+
+    # Member variable properties
     @property
     def faith(self):
         return self._faith
     @faith.setter
     def faith(self, value):
         self._faith = value
+
     @property
     def holy_symbol(self):
         return self._holy_symbol
     @holy_symbol.setter
     def holy_symbol(self, value):
         self._holy_symbol = value
+
     @property
-    def divine_spells(self):
-        return self._divine_spells
-    @divine_spells.setter
-    def divine_spells(self, value):
-        self._divine_spells = value
+    def divine_spell_list(self):
+        return self._divine_spell_list
+    @divine_spell_list.setter
+    def divine_spell_list(self, value):
+        self._divine_spell_list = value
+
     @property
     def cleric_domain(self):
         return self._cleric_domain
     @cleric_domain.setter
     def cleric_domain(self, value):
         self._cleric_domain = value
+
     @property
     def sacred_text(self):
         return self._sacred_text
     @sacred_text.setter
     def sacred_text(self, value):
         self._sacred_text = value
-    @property
-    def healing_abilities(self):
-        return self._healing_abilities
-    @healing_abilities.setter
-    def healing_abilities(self, value):
-        self._healing_abilities = value
-    @property
-    def rituals(self):
-        return self._rituals
-    @rituals.setter
-    def rituals(self, value):
-        self._rituals = value
 
-    # Unique functions
+    @property
+    def healing_ability_list(self):
+        return self._healing_ability_list
+    @healing_ability_list.setter
+    def healing_ability_list(self, value):
+        self._healing_ability_list = value
+
+    @property
+    def ritual_list(self):
+        return self._ritual_list
+    @ritual_list.setter
+    def ritual_list(self, value):
+        self._ritual_list = value
+
+    # Member functions (actions/verbs)
     def pray(self, duration):
         """
         Prays for a specified duration to increase faith.
@@ -71,7 +76,7 @@ class Priest(Character):
         self._faith += duration * 2
         print(f"{self._name} prays for {duration} minutes and increases faith to {self._faith}.")
 
-    def heal(self, target):
+    def heal_target(self, target):
         """
         Heals a target if enough faith is available.
 
@@ -87,7 +92,7 @@ class Priest(Character):
         else:
             print(f"{self._name} does not have enough faith to heal.")
 
-    def bless(self, target):
+    def bless_target(self, target):
         """
         Blesses a target if enough faith is available.
 
@@ -113,7 +118,7 @@ class Priest(Character):
         Returns:
             None
         """
-        if ritual_name in self._rituals:
+        if ritual_name in self._ritual_list:
             print(f"{self._name} performs the ritual: {ritual_name}.")
         else:
             print(f"{self._name} does not know the ritual: {ritual_name}.")
@@ -141,7 +146,7 @@ class Priest(Character):
         Returns:
             None
         """
-        if spell_name in self._divine_spells:
+        if spell_name in self._divine_spell_list:
             if self._faith >= 15:
                 self._faith -= 15
                 print(f"{self._name} casts {spell_name} on {target}, faith is now {self._faith}.")
@@ -150,7 +155,7 @@ class Priest(Character):
         else:
             print(f"{self._name} does not know the divine spell: {spell_name}.")
 
-    def convert(self, target):
+    def convert_target(self, target):
         """
         Attempts to convert a target to the priest's faith.
 

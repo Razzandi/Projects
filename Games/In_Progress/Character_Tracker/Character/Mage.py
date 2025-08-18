@@ -2,15 +2,22 @@ from default_character import Character
 from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 class Mage(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.MAGE, _level)
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.MAGE, level)
         self._mana = 100
         self._spellbook = []
         self._familiar = None
         self._elemental_affinity = "Fire"
-        self._rituals = []
+        self._ritual_list = []
 
-    # Unique member variables
+    # Member variable properties
+    @property
+    def mana(self):
+        return self._mana
+    @mana.setter
+    def mana(self, value):
+        self._mana = value
+
     @property
     def spellbook(self):
         """
@@ -20,7 +27,6 @@ class Mage(Character):
             list: The list of spells known by the mage.
         """
         return self._spellbook
-
     @spellbook.setter
     def spellbook(self, value):
         """
@@ -28,7 +34,7 @@ class Mage(Character):
 
         Parameters:
             value (list): The new list of spells for the mage.
-        
+
         Returns:
             None
         """
@@ -43,7 +49,6 @@ class Mage(Character):
             str or None: The name of the mage's familiar, or None if not set.
         """
         return self._familiar
-
     @familiar.setter
     def familiar(self, value):
         """
@@ -51,7 +56,7 @@ class Mage(Character):
 
         Parameters:
             value (str): The name of the familiar.
-        
+
         Returns:
             None
         """
@@ -66,7 +71,6 @@ class Mage(Character):
             str: The mage's elemental affinity.
         """
         return self._elemental_affinity
-
     @elemental_affinity.setter
     def elemental_affinity(self, value):
         """
@@ -74,36 +78,35 @@ class Mage(Character):
 
         Parameters:
             value (str): The new elemental affinity.
-        
+
         Returns:
             None
         """
         self._elemental_affinity = value
 
     @property
-    def rituals(self):
+    def ritual_list(self):
         """
         Gets the mage's rituals.
 
         Returns:
             list: The list of rituals known by the mage.
         """
-        return self._rituals
-
-    @rituals.setter
-    def rituals(self, value):
+        return self._ritual_list
+    @ritual_list.setter
+    def ritual_list(self, value):
         """
         Sets the mage's rituals.
 
         Parameters:
             value (list): The new list of rituals for the mage.
-        
+
         Returns:
             None
         """
-        self._rituals = value
+        self._ritual_list = value
 
-    # Unique functions
+    # Member functions (actions/verbs)
     def cast_spell(self, spell):
         """
         Casts a spell from the mage's spellbook if enough mana is available.

@@ -2,70 +2,77 @@ from default_character import Character
 from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 class Bandit(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.BANDIT, _level)
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.BANDIT, level)
 
-        self._stealth = 80
-        self._notoriety = 50
-        self._preferred_weapon = "Dagger"
-        self._loot = []
+        self._stealth_level = 80
+        self._notoriety_level = 50
+        self._weapon_preference = "Dagger"
+        self._loot_list = []
         self._hideout_location = "Abandoned Warehouse"
-        self._gang_size = 5
-        self._escape_routes = ["Sewer", "Forest Path"]
-        self._ransom_skills = ["Negotiation", "Intimidation"]
-        
-    # Unique member variables
+        self._gang_member_count = 5
+        self._escape_route_list = ["Sewer", "Forest Path"]
+        self._ransom_skill_list = ["Negotiation", "Intimidation"]
+
+    # Member variable properties
     @property
-    def stealth(self):
-        return self._stealth
-    @stealth.setter
-    def stealth(self, value):
-        self._stealth = value
+    def stealth_level(self):
+        return self._stealth_level
+    @stealth_level.setter
+    def stealth_level(self, value):
+        self._stealth_level = value
+
     @property
-    def notoriety(self):
-        return self._notoriety
-    @notoriety.setter
-    def notoriety(self, value):
-        self._notoriety = value
+    def notoriety_level(self):
+        return self._notoriety_level
+    @notoriety_level.setter
+    def notoriety_level(self, value):
+        self._notoriety_level = value
+
     @property
-    def preferred_weapon(self):
-        return self._preferred_weapon
-    @preferred_weapon.setter
-    def preferred_weapon(self, value):
-        self._preferred_weapon = value
+    def weapon_preference(self):
+        return self._weapon_preference
+    @weapon_preference.setter
+    def weapon_preference(self, value):
+        self._weapon_preference = value
+
     @property
-    def loot(self):
-        return self._loot
-    @loot.setter
-    def loot(self, value):
-        self._loot = value
+    def loot_list(self):
+        return self._loot_list
+    @loot_list.setter
+    def loot_list(self, value):
+        self._loot_list = value
+
     @property
     def hideout_location(self):
         return self._hideout_location
     @hideout_location.setter
     def hideout_location(self, value):
         self._hideout_location = value
-    @property
-    def gang_size(self):
-        return self._gang_size
-    @gang_size.setter
-    def gang_size(self, value):
-        self._gang_size = value
-    @property
-    def escape_routes(self):
-        return self._escape_routes
-    @escape_routes.setter
-    def escape_routes(self, value):
-        self._escape_routes = value
-    @property
-    def ransom_skills(self):
-        return self._ransom_skills
-    @ransom_skills.setter
-    def ransom_skills(self, value):
-        self._ransom_skills = value
 
-    # Unique functions
-    def steal(self, target):
+    @property
+    def gang_member_count(self):
+        return self._gang_member_count
+    @gang_member_count.setter
+    def gang_member_count(self, value):
+        self._gang_member_count = value
+
+    @property
+    def escape_route_list(self):
+        return self._escape_route_list
+    @escape_route_list.setter
+    def escape_route_list(self, value):
+        self._escape_route_list = value
+
+    @property
+    def ransom_skill_list(self):
+        return self._ransom_skill_list
+    @ransom_skill_list.setter
+    def ransom_skill_list(self, value):
+        self._ransom_skill_list = value
+
+    # Member functions (actions/verbs)
+    def steal_from(self, target):
         """
         Attempts to steal loot from a target.
 
@@ -75,7 +82,7 @@ class Bandit(Character):
         Returns:
             None
         """
-        print(f"{self._name} attempts to steal from {target} using stealth skill {self._stealth}.")
+        print(f"{self._name} attempts to steal from {target} using stealth level {self._stealth_level}.")
 
     def bribe_guard(self, amount):
         """
@@ -87,9 +94,9 @@ class Bandit(Character):
         Returns:
             None
         """
-        if len(self._loot) >= amount:
+        if len(self._loot_list) >= amount:
             print(f"{self._name} bribes a guard with {amount} loot items.")
-            self._loot = self._loot[amount:]
+            self._loot_list = self._loot_list[amount:]
         else:
             print(f"{self._name} does not have enough loot to bribe the guard.")
 
@@ -103,7 +110,7 @@ class Bandit(Character):
         Returns:
             None
         """
-        if route in self._escape_routes:
+        if route in self._escape_route_list:
             print(f"{self._name} plans an escape through the {route}.")
         else:
             print(f"{self._name} does not know the escape route: {route}.")
@@ -119,7 +126,7 @@ class Bandit(Character):
         Returns:
             None
         """
-        if skill in self._ransom_skills:
+        if skill in self._ransom_skill_list:
             print(f"{self._name} uses {skill} to ransom {hostage}.")
         else:
             print(f"{self._name} does not possess the ransom skill: {skill}.")
@@ -134,8 +141,8 @@ class Bandit(Character):
         Returns:
             None
         """
-        self._gang_size += number
-        print(f"{self._name} expands the gang by {number} members. Total gang size: {self._gang_size}.")
+        self._gang_member_count += number
+        print(f"{self._name} expands the gang by {number} members. Total gang size: {self._gang_member_count}.")
 
     def relocate_hideout(self, new_location):
         """
@@ -149,4 +156,3 @@ class Bandit(Character):
         """
         self._hideout_location = new_location
         print(f"{self._name} relocates the hideout to {new_location}.")
-

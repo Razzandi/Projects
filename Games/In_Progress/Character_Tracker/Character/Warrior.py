@@ -2,61 +2,67 @@ from default_character import Character
 from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
 
 class Warrior(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.WARRIOR, _level)
-
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.WARRIOR, level)
         self._strength = 100
         self._endurance = 90
         self._weapon_skill = 85
         self._armor_type = "Heavy"
         self._battle_cry = "For Glory!"
         self._combat_stance = "Aggressive"
-        self._special_moves = ["Power Strike", "Shield Bash"]
+        self._special_move_list = ["Power Strike", "Shield Bash"]
         self._war_horn = "Dragon's Roar"
-        
-    # Unique member variables
+
+    # Member variable properties
     @property
     def strength(self):
         return self._strength
     @strength.setter
     def strength(self, value):
         self._strength = value
+
     @property
     def endurance(self):
         return self._endurance
     @endurance.setter
     def endurance(self, value):
         self._endurance = value
+
     @property
     def weapon_skill(self):
         return self._weapon_skill
     @weapon_skill.setter
     def weapon_skill(self, value):
         self._weapon_skill = value
+
     @property
     def armor_type(self):
         return self._armor_type
     @armor_type.setter
     def armor_type(self, value):
         self._armor_type = value
+
     @property
     def battle_cry(self):
         return self._battle_cry
     @battle_cry.setter
     def battle_cry(self, value):
         self._battle_cry = value
+
     @property
     def combat_stance(self):
         return self._combat_stance
     @combat_stance.setter
     def combat_stance(self, value):
         self._combat_stance = value
+
     @property
-    def special_moves(self):
-        return self._special_moves
-    @special_moves.setter
-    def special_moves(self, value):
-        self._special_moves = value
+    def special_move_list(self):
+        return self._special_move_list
+    @special_move_list.setter
+    def special_move_list(self, value):
+        self._special_move_list = value
+
     @property
     def war_horn(self):
         return self._war_horn
@@ -64,8 +70,8 @@ class Warrior(Character):
     def war_horn(self, value):
         self._war_horn = value
 
-    # Unique functions
-    def berserk(self):
+    # Member functions (actions/verbs)
+    def go_berserk(self):
         """
         Increases strength and decreases endurance if enough endurance is available.
 
@@ -105,7 +111,7 @@ class Warrior(Character):
         Returns:
             str: Message about using the special move or not knowing it.
         """
-        if move in self._special_moves:
+        if move in self._special_move_list:
             return f"{self.name} uses {move}!"
         else:
             return f"{move} is not a known special move."
@@ -237,7 +243,7 @@ class Warrior(Character):
         block_chance = self._endurance * 0.4 + self._weapon_skill * 0.2
         return f"{self._name} defends against {attacker} with a block chance of {block_chance}%."
     
-    def rally(self, allies):
+    def rally_allies(self, allies):
         """
         Rallies allies to fight with renewed vigor.
 
@@ -249,7 +255,7 @@ class Warrior(Character):
         """
         return f"{self._name} rallies the allies: {', '.join(allies)} to fight with renewed vigor!"
     
-    def intimidate(self, enemy):
+    def intimidate_enemy(self, enemy):
         """
         Intimidates an enemy to lower their morale.
 
@@ -360,7 +366,7 @@ class Warrior(Character):
         """
         return f"{self._name} leads the siege on {fortress_name}, demonstrating strategic prowess!"
     
-    def train_special_move(self, move_name):
+    def learn_special_move(self, move_name):
         """
         Learns a new special move if not already known.
 
@@ -370,8 +376,8 @@ class Warrior(Character):
         Returns:
             str: Message about learning the special move or already knowing it.
         """
-        if move_name not in self._special_moves:
-            self._special_moves.append(move_name)
+        if move_name not in self._special_move_list:
+            self._special_move_list.append(move_name)
             return f"{self._name} has learned a new special move: {move_name}!"
         else:
             return f"{self._name} already knows the special move: {move_name}."
