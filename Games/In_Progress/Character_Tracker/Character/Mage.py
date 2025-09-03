@@ -1,5 +1,5 @@
 from default_character import Character
-from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
+from character_class import CharacterClass
 
 class Mage(Character):
     def __init__(self, name, level=1):
@@ -11,28 +11,46 @@ class Mage(Character):
         self._ritual_list = []
 
     # Member variable properties
-    @property
-    def mana(self):
+    
+    def get_mana(self):
+        """
+        Gets the mage's current mana.
+
+        Args: 
+            None
+
+        Returns the current mana of the mage."""
         return self._mana
-    @mana.setter
-    def mana(self, value):
+
+    def set_mana(self, value):
+        """
+        Sets the mage's mana.
+        
+        Args:
+            value (int): New mana value.
+            
+        Returns:
+            int: Updated mana value.
+        """
         self._mana = value
 
-    @property
-    def spellbook(self):
+    def get_spellbook(self):
         """
         Gets the mage's spellbook.
+
+        Args: 
+            None
 
         Returns:
             list: The list of spells known by the mage.
         """
         return self._spellbook
-    @spellbook.setter
-    def spellbook(self, value):
+    
+    def set_spellbook(self, value):
         """
         Sets the mage's spellbook.
 
-        Parameters:
+        Args: 
             value (list): The new list of spells for the mage.
 
         Returns:
@@ -40,21 +58,23 @@ class Mage(Character):
         """
         self._spellbook = value
 
-    @property
-    def familiar(self):
+    def get_familiar(self):
         """
         Gets the mage's familiar.
+
+        Args: 
+            None
 
         Returns:
             str or None: The name of the mage's familiar, or None if not set.
         """
         return self._familiar
-    @familiar.setter
-    def familiar(self, value):
+    
+    def set_familiar(self, value):
         """
         Sets the mage's familiar.
 
-        Parameters:
+        Args: 
             value (str): The name of the familiar.
 
         Returns:
@@ -62,21 +82,23 @@ class Mage(Character):
         """
         self._familiar = value
 
-    @property
-    def elemental_affinity(self):
+    def get_elemental_affinity(self):
         """
         Gets the mage's elemental affinity.
+
+        Args:
+            None
 
         Returns:
             str: The mage's elemental affinity.
         """
         return self._elemental_affinity
-    @elemental_affinity.setter
-    def elemental_affinity(self, value):
+    
+    def set_elemental_affinity(self, value):
         """
         Sets the mage's elemental affinity.
 
-        Parameters:
+        Args:
             value (str): The new elemental affinity.
 
         Returns:
@@ -84,17 +106,19 @@ class Mage(Character):
         """
         self._elemental_affinity = value
 
-    @property
-    def ritual_list(self):
+    def get_ritual_list(self):
         """
         Gets the mage's rituals.
+
+        Args:
+            None
 
         Returns:
             list: The list of rituals known by the mage.
         """
         return self._ritual_list
-    @ritual_list.setter
-    def ritual_list(self, value):
+    
+    def set_ritual_list(self, value):
         """
         Sets the mage's rituals.
 
@@ -111,7 +135,7 @@ class Mage(Character):
         """
         Casts a spell from the mage's spellbook if enough mana is available.
 
-        Parameters:
+        Args:
             spell (str): The name of the spell to cast.
 
         Returns:
@@ -127,7 +151,7 @@ class Mage(Character):
         """
         Summons a familiar for the mage.
 
-        Parameters:
+        Args:
             familiar_name (str): The name of the familiar to summon.
 
         Returns:

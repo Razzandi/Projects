@@ -1,5 +1,5 @@
 from default_character import Character
-from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
+from character_class import CharacterClass
 
 class Paladin(Character):
     def __init__(self, name, level=1):
@@ -13,53 +13,157 @@ class Paladin(Character):
         self._healing_ability_list = ["Lay on Hands", "Cure Wounds"]
 
     # Member variable properties
-    @property
-    def faith(self):
+    def get_faith(self):
+        """
+        Gets the paladin's current faith.
+        
+        Args: 
+            None
+        
+        Returns the current faith of the paladin."""
         return self._faith
-    @faith.setter
-    def faith(self, value):
+    
+    def set_faith(self, value):
+        """
+        Sets the paladin's faith.
+        
+        Args:
+            value (int): New faith value.
+        
+        Returns:
+            int: Updated faith value."""
         self._faith = value
 
-    @property
-    def holy_symbol(self):
+    def get_holy_symbol(self):
+        """
+        Gets the paladin's holy symbol.
+        
+        Args: 
+            None
+            
+        Returns:
+            str: The paladin's holy symbol."""
         return self._holy_symbol
-    @holy_symbol.setter
-    def holy_symbol(self, value):
+    
+    def set_holy_symbol(self, value):
+        """
+        Sets the paladin's holy symbol.
+        
+        Args:
+            value (str): New holy symbol.
+            
+        Returns:
+            str: Updated holy symbol."""
         self._holy_symbol = value
 
-    @property
-    def divine_spell_list(self):
+    def get_divine_spell_list(self):
+        """
+        Gets the paladin's divine spell list.
+        
+        Args:
+            None
+        
+        Returns:
+            list: The list of divine spells known by the paladin."""
         return self._divine_spell_list
-    @divine_spell_list.setter
-    def divine_spell_list(self, value):
+    
+    def set_divine_spell_list(self, value):
+        """
+        Sets the paladin's divine spell list.
+        
+        Args:
+            value (list): New list of divine spells.
+        
+        Returns:
+            list: Updated list of divine spells."""
         self._divine_spell_list = value
 
-    @property
-    def mount(self):
+    def get_mount(self):
+        """
+        Gets the paladin's mount.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: The type of mount the paladin rides."""
         return self._mount
-    @mount.setter
-    def mount(self, value):
+    
+    def set_mount(self, value):
+        """
+        Sets the paladin's mount.
+        
+        Args:
+            value (str): New mount type.
+        
+        Returns:
+            str: Updated mount type."""
         self._mount = value
 
-    @property
-    def armor_type(self):
+    def get_armor_type(self):
+        """
+        Gets the paladin's armor type.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: The type of armor the paladin wears."""
         return self._armor_type
-    @armor_type.setter
-    def armor_type(self, value):
+    
+    def set_armor_type(self, value):
+        """
+        Sets the paladin's armor type.
+        
+        Args:
+            value (str): New armor type.
+        
+        Returns:
+            str: Updated armor type."""
         self._armor_type = value
 
-    @property
-    def sacred_oath(self):
+    def get_sacred_oath(self):
+        """
+        Gets the paladin's sacred oath.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: The paladin's sacred oath."""
         return self._sacred_oath
-    @sacred_oath.setter
-    def sacred_oath(self, value):
+    
+    def set_sacred_oath(self, value):
+        """
+        Sets the paladin's sacred oath.
+        
+        Args:
+            value (str): New sacred oath.
+            
+        Returns:
+            str: Updated sacred oath."""
         self._sacred_oath = value
 
-    @property
-    def healing_ability_list(self):
+    def get_healing_ability_list(self):
+        """
+        Gets the paladin's healing ability list.
+        
+        Args: 
+            None
+            
+        Returns:
+            list: The list of healing abilities known by the paladin."""
         return self._healing_ability_list
-    @healing_ability_list.setter
+    
     def healing_ability_list(self, value):
+        """
+        Sets the paladin's healing ability list.
+        
+        Args:
+            value (list): New list of healing abilities.
+        
+        Returns:
+            list: Updated list of healing abilities."""
         self._healing_ability_list = value
 
     # Member functions (actions/verbs)
@@ -92,4 +196,4 @@ class Paladin(Character):
         """
         Dismounts from the paladin's horse.
         """
-        print(f"{self._name} dismounts from their {self._mount}.")
+        print(f"{self._name} dismounts from their {self._mount}.")"""

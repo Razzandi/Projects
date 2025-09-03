@@ -1,5 +1,6 @@
+from typing import Any
 from default_character import Character
-from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
+from character_class import CharacterClass
 
 class Bandit(Character):
     def __init__(self, name, level=1):
@@ -15,68 +16,212 @@ class Bandit(Character):
         self._ransom_skill_list = ["Negotiation", "Intimidation"]
 
     # Member variable properties
-    @property
-    def stealth_level(self):
+    def get_stealth_level(self):
+        """
+        Returns the current stealth level of the bandit.
+        
+        Args: 
+            None
+        
+        Returns:
+            int: Current stealth level value.
+        """
         return self._stealth_level
-    @stealth_level.setter
-    def stealth_level(self, value):
+    
+    def set_stealth_level(self, value):
+        """
+        Sets the stealth level of the bandit.
+        
+        Args:
+            value (int): New stealth level value.
+            
+        Returns:
+            int: Updated stealth level value.
+        """
         self._stealth_level = value
-
-    @property
-    def notoriety_level(self):
+        return value
+    
+    def get_notoriety_level(self):
+        """
+        Returns the current notoriety level of the bandit.
+        
+        Args: 
+            None
+        
+        Returns:
+            int: Current notoriety level value.
+        """
         return self._notoriety_level
-    @notoriety_level.setter
-    def notoriety_level(self, value):
+    
+    def set_notoriety_level(self, value):
+        """
+        Sets the notoriety level of the bandit.
+        
+        Args:
+            value (int): New notoriety level value.
+            
+        Returns:
+            int: Updated notoriety level value.
+        """
         self._notoriety_level = value
-
-    @property
-    def weapon_preference(self):
+        return value
+    
+    def get_weapon_preference(self):
+        """
+        Returns the bandit's weapon preference.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: The name of the preferred weapon.
+        """
         return self._weapon_preference
-    @weapon_preference.setter
-    def weapon_preference(self, value):
+    
+    def set_weapon_preference(self, value):
+        """
+        Sets the bandit's weapon preference.
+        
+        Args:
+            value (str): The name of the preferred weapon.
+            
+        Returns:
+            str: The name of the assigned weapon preference.
+        """
         self._weapon_preference = value
-
-    @property
-    def loot_list(self):
+        return value
+   
+    def get_loot_list(self):
+        """
+        Returns the list of loot the bandit has.
+        
+        Args: 
+            None
+        
+        Returns:
+            list: List of loot items.
+        """
         return self._loot_list
-    @loot_list.setter
-    def loot_list(self, value):
+    
+    def set_loot_list(self, value):
+        """
+        Sets the list of loot the bandit has.
+        
+        Args:
+            value (list): List of loot items.
+            
+        Returns:
+            list: Updated list of loot items.
+        """
         self._loot_list = value
-
-    @property
-    def hideout_location(self):
+        return value
+    
+    def get_hideout_location(self):
+        """
+        Returns the bandit's hideout location.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: The name of the hideout location.
+        """
         return self._hideout_location
-    @hideout_location.setter
-    def hideout_location(self, value):
+    
+    def set_hideout_location(self, value):
+        """
+        Sets the bandit's hideout location.
+        
+        Args:
+            value (str): The name of the hideout location.
+            
+        Returns:
+            str: The name of the assigned hideout location.
+        """
         self._hideout_location = value
-
-    @property
-    def gang_member_count(self):
+        return value
+    
+    def get_gang_member_count(self):
+        """
+        Returns the number of gang members the bandit has.
+        
+        Args: 
+            None
+        
+        Returns:
+            int: Number of gang members.
+        """
         return self._gang_member_count
-    @gang_member_count.setter
-    def gang_member_count(self, value):
+    
+    def set_gang_member_count(self, value):
+        """
+        Sets the number of gang members the bandit has.
+        
+        Args:
+            value (int): Number of gang members.
+            
+        Returns:
+            int: Updated number of gang members.
+        """
         self._gang_member_count = value
-
-    @property
-    def escape_route_list(self):
+        return value
+  
+    def get_escape_route_list(self):
+        """
+        Returns the list of escape routes the bandit knows.
+        
+        Args: 
+            None
+        
+        Returns:
+            list: List of escape route names.
+        """
         return self._escape_route_list
-    @escape_route_list.setter
-    def escape_route_list(self, value):
+    
+    def set_escape_route_list(self, value):
+        """
+        Sets the list of escape routes the bandit knows.
+        
+        Args:
+            value (list): List of escape route names.
+            
+        Returns:
+            list: Updated list of escape routes.
+        """
         self._escape_route_list = value
-
-    @property
-    def ransom_skill_list(self):
+        return value
+   
+    def get_ransom_skill_list(self):
+        """
+        Returns the list of ransom skills the bandit possesses.
+        
+        Args: 
+            None
+        
+        Returns:
+            list: List of ransom skill names.
+        """
         return self._ransom_skill_list
-    @ransom_skill_list.setter
-    def ransom_skill_list(self, value):
+    
+    def set_ransom_skill_list(self, value):
+        """
+        Sets the list of ransom skills the bandit possesses.
+        
+        Args:
+            value (list): List of ransom skill names.
+            
+        Returns:
+            list: Updated list of ransom skills.
+        """
         self._ransom_skill_list = value
+        return value
 
     # Member functions (actions/verbs)
     def steal_from(self, target):
         """
         Attempts to steal loot from a target.
 
-        Parameters:
+        Args:
             target (str): The target to steal from.
 
         Returns:
@@ -88,7 +233,7 @@ class Bandit(Character):
         """
         Bribes a guard with a specified amount of loot.
 
-        Parameters:
+        Args:
             amount (int): The amount of loot to use for bribery.
 
         Returns:
@@ -104,7 +249,7 @@ class Bandit(Character):
         """
         Plans an escape using a specified route.
 
-        Parameters:
+        Args:
             route (str): The escape route to use.
 
         Returns:
@@ -119,7 +264,7 @@ class Bandit(Character):
         """
         Attempts to ransom a hostage using a specified skill.
 
-        Parameters:
+        Args:
             hostage (str): The name of the hostage.
             skill (str): The ransom skill to use.
 
@@ -135,7 +280,7 @@ class Bandit(Character):
         """
         Expands the gang by a specified number of members.
 
-        Parameters:
+        Args:
             number (int): The number of new members to add.
 
         Returns:
@@ -148,7 +293,7 @@ class Bandit(Character):
         """
         Relocates the bandit's hideout to a new location.
 
-        Parameters:
+        Args:
             new_location (str): The new hideout location.
 
         Returns:

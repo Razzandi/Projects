@@ -1,5 +1,5 @@
 from default_character import Character
-from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
+from character_class import CharacterClass
 
 class Hunter(Character):
     def __init__(self, name, level=1):
@@ -13,62 +13,206 @@ class Hunter(Character):
         self._hunting_technique_list = ["Stealth", "Tracking"]
         self._survival_gear_list = ["Knife", "Rope"]
 
-    # Member variable properties
-    @property
-    def stamina(self):
+    
+    def get_stamina(self):
+        """
+        Returns the current stamina of the hunter.
+        
+        Args: 
+            None
+        
+        Returns:
+            int: Current stamina value.
+        """
         return self._stamina
-    @stamina.setter
-    def stamina(self, value):
+    
+    def set_stamina(self, value):
+        """
+        Sets the stamina of the hunter.
+        
+        Args:
+            value (int): New stamina value.
+            
+        Returns:
+            int: Updated stamina value.
+        """
         self._stamina = value
-
-    @property
-    def pet(self):
+        return value
+    
+    def get_pet(self):
+        """
+        Returns the hunter's pet.
+        
+        Args: 
+            None
+        
+        Returns:
+            str or None: The name of the pet, or None if no pet is assigned.
+        """
         return self._pet
-    @pet.setter
-    def pet(self, value):
+    
+    def set_pet(self, value):
+        """
+        Sets the hunter's pet.
+        
+        Args:
+            value (str): The name of the pet.
+            
+        Returns:
+            str: The name of the assigned pet.
+        """
         self._pet = value
-
-    @property
-    def trap_list(self):
+        return value
+    
+    def get_trap_list(self):
+        """
+        Returns the list of traps the hunter has.
+        
+        Args: 
+            None
+        
+        Returns:
+            list: List of trap types.
+        """
         return self._trap_list
-    @trap_list.setter
-    def trap_list(self, value):
+    
+    def set_trap_list(self, value):
+        """
+        Sets the list of traps the hunter has.
+        
+        Args:
+            value (list): List of trap types.
+            
+        Returns:
+            list: Updated list of traps.
+        """
         self._trap_list = value
+        return value
 
-    @property
-    def bow_type(self):
+    def get_bow_type(self):
+        """
+        Returns the type of bow the hunter uses.
+        
+        Args: 
+            None
+        
+        Returns:
+            str: Type of bow.
+        """
         return self._bow_type
-    @bow_type.setter
-    def bow_type(self, value):
+    
+    def set_bow_type(self, value):
+        """
+        Sets the type of bow the hunter uses.
+        
+        Args:
+            value (str): Type of bow.
+            
+        Returns:
+            str: Updated type of bow.
+        """
         self._bow_type = value
+        return value
 
-    @property
-    def quiver_capacity(self):
+    def get_quiver_capacity(self):
+        """
+        Returns the quiver capacity of the hunter.
+
+        Args: 
+            None
+
+        Returns:
+            int: Quiver capacity.
+        """
         return self._quiver_capacity
-    @quiver_capacity.setter
-    def quiver_capacity(self, value):
+
+    def set_quiver_capacity(self, value):
+        """
+        Sets the quiver capacity of the hunter.
+
+        Args:
+            value (int): Quiver capacity.
+
+        Returns:
+            int: Updated quiver capacity.
+        """
         self._quiver_capacity = value
+        return value
 
-    @property
-    def preferred_hunting_ground(self):
+    def get_preferred_hunting_ground(self):
+        """
+        Returns the preferred hunting ground of the hunter.
+
+        Args: 
+            None
+
+        Returns:
+            str: Preferred hunting ground.
+        """
         return self._preferred_hunting_ground
-    @preferred_hunting_ground.setter
-    def preferred_hunting_ground(self, value):
+    
+    def set_preferred_hunting_ground(self, value):
+        """
+        Sets the preferred hunting ground of the hunter.
+
+        Args:
+            value (str): Preferred hunting ground.
+
+        Returns:
+            str: Updated preferred hunting ground.
+        """
         self._preferred_hunting_ground = value
+        return value
 
-    @property
-    def hunting_technique_list(self):
+    def get_hunting_technique_list(self):
+        """
+        Returns the list of hunting techniques known by the hunter.
+
+        Args: 
+            None
+
+        Returns:
+            list: List of hunting techniques.
+        """
         return self._hunting_technique_list
-    @hunting_technique_list.setter
-    def hunting_technique_list(self, value):
-        self._hunting_technique_list = value
 
-    @property
-    def survival_gear_list(self):
+    def set_hunting_technique_list(self, value):
+        """
+        Sets the list of hunting techniques known by the hunter.
+
+        Args:
+            value (list): List of hunting techniques.
+
+        Returns:
+            list: Updated list of hunting techniques.
+        """
+        self._hunting_technique_list = value
+        return value
+
+    def get_survival_gear_list(self):
+        """
+        Returns the list of survival gear the hunter has.
+
+        Args: 
+            None
+
+        Returns:
+            list: List of survival gear.
+        """
         return self._survival_gear_list
-    @survival_gear_list.setter
-    def survival_gear_list(self, value):
+    
+    def set_survival_gear_list(self, value):
+        """
+        Sets the list of survival gear the hunter has.
+
+        Args:
+            value (list): List of survival gear.
+
+        Returns:
+            list: Updated list of survival gear.
+        """
         self._survival_gear_list = value
+        return value
 
     # Member functions (actions/verbs)
     def set_trap(self, trap_type):

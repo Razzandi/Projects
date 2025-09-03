@@ -1,5 +1,5 @@
 from default_character import Character
-from Joe_Github.Projects.Games.In_Progress.Character_Tracker.Character.character_class import CharacterClass
+from character_class import CharacterClass
 
 class Priest(Character):
     def __init__(self, name, level=1):
@@ -13,53 +13,159 @@ class Priest(Character):
         self._ritual_list = ["Sanctify", "Consecrate"]
 
     # Member variable properties
-    @property
-    def faith(self):
+    
+    def get_faith(self):
+        """
+        Gets the priest's current faith.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The current faith of the priest."""
         return self._faith
-    @faith.setter
-    def faith(self, value):
+    
+    def set_faith(self, value):
+        """
+        Sets the priest's faith.
+
+        Args:
+            value (int): New faith value.
+        
+        Returns:
+            int: Updated faith value."""
         self._faith = value
 
-    @property
-    def holy_symbol(self):
+    def get_holy_symbol(self):
+        """
+        Gets the priest's holy symbol.
+        
+        Args: 
+            None
+            
+        Returns:
+            str: The priest's holy symbol."""
         return self._holy_symbol
-    @holy_symbol.setter
-    def holy_symbol(self, value):
+    
+    def set_holy_symbol(self, value):
+        """
+        Sets the priest's holy symbol.
+
+        Args:
+            value (str): New holy symbol.
+        
+        Returns:
+            str: Updated holy symbol."""
         self._holy_symbol = value
 
-    @property
-    def divine_spell_list(self):
+    def get_divine_spell_list(self):
+        """
+        Gets the priest's divine spell list.
+        
+        Args:
+            None
+        
+        Returns:
+            list: The list of divine spells known by the priest."""
         return self._divine_spell_list
-    @divine_spell_list.setter
-    def divine_spell_list(self, value):
+    
+    def set_divine_spell_list(self, value):
+        """
+        Sets the priest's divine spell list.
+        
+        Args:
+            value (list): New list of divine spells.
+            
+        Returns:
+            list: Updated list of divine spells."""
         self._divine_spell_list = value
 
-    @property
-    def cleric_domain(self):
+    def get_cleric_domain(self):
+        """
+        Gets the priest's cleric domain.
+        
+        Args:
+            None
+            
+        Returns:
+            str: The priest's cleric domain."""
         return self._cleric_domain
-    @cleric_domain.setter
-    def cleric_domain(self, value):
+    
+    def set_cleric_domain(self, value):
+        """
+        Sets the priest's cleric domain.
+        
+        Args:
+            value (str): New cleric domain.
+            
+        Returns:
+            str: Updated cleric domain."""
         self._cleric_domain = value
 
-    @property
-    def sacred_text(self):
+    def get_sacred_text(self):
+        """
+        Gets the priest's sacred text.
+        
+        Args:
+            None
+            
+        Returns:
+            str: The priest's sacred text."""
         return self._sacred_text
-    @sacred_text.setter
-    def sacred_text(self, value):
+    
+    def set_sacred_text(self, value):
+        """
+        Sets the priest's sacred text.
+        
+        Args:
+            value (str): New sacred text.
+            
+        Returns:
+            str: Updated sacred text."""
         self._sacred_text = value
 
-    @property
-    def healing_ability_list(self):
+    def get_healing_ability_list(self):
+        """
+        Gets the priest's healing ability list.
+        
+        Args:
+            None
+            
+        Returns:
+            list: The list of healing abilities known by the priest."""
         return self._healing_ability_list
-    @healing_ability_list.setter
-    def healing_ability_list(self, value):
+    
+    def set_healing_ability_list(self, value):
+        """
+        Sets the priest's healing ability list.
+        
+        Args:
+            value (list): New list of healing abilities.
+            
+        Returns:
+            list: Updated list of healing abilities."""
         self._healing_ability_list = value
 
-    @property
-    def ritual_list(self):
+    def get_ritual_list(self):
+        """
+        Gets the priest's ritual list.
+        
+        Args:
+            None
+            
+        Returns:
+            list: The list of rituals known by the priest."""
         return self._ritual_list
-    @ritual_list.setter
-    def ritual_list(self, value):
+    
+    def set_ritual_list(self, value):
+        """
+        Sets the priest's ritual list.
+        
+        Args:
+            value (list): New list of rituals.
+            
+        Returns:
+            list: Updated list of rituals."""
         self._ritual_list = value
 
     # Member functions (actions/verbs)
@@ -67,7 +173,7 @@ class Priest(Character):
         """
         Prays for a specified duration to increase faith.
 
-        Parameters:
+        Args:
             duration (int): The number of minutes spent praying.
 
         Returns:
@@ -80,7 +186,7 @@ class Priest(Character):
         """
         Heals a target if enough faith is available.
 
-        Parameters:
+        Args:
             target (str): The target to heal.
 
         Returns:
@@ -96,7 +202,7 @@ class Priest(Character):
         """
         Blesses a target if enough faith is available.
 
-        Parameters:
+        Args:
             target (str): The target to bless.
 
         Returns:
@@ -112,7 +218,7 @@ class Priest(Character):
         """
         Performs a ritual if known.
 
-        Parameters:
+        Args:
             ritual_name (str): The name of the ritual to perform.
 
         Returns:
@@ -127,7 +233,7 @@ class Priest(Character):
         """
         Reads from the sacred text to gain wisdom and insight.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -139,7 +245,7 @@ class Priest(Character):
         """
         Casts a divine spell on a target if known and enough faith is available.
 
-        Parameters:
+        Args:
             spell_name (str): The name of the divine spell.
             target (str): The target of the spell.
 
@@ -159,7 +265,7 @@ class Priest(Character):
         """
         Attempts to convert a target to the priest's faith.
 
-        Parameters:
+        Args:
             target (str): The target to convert.
 
         Returns:
@@ -171,7 +277,7 @@ class Priest(Character):
         """
         Meditates for a specified duration to increase faith.
 
-        Parameters:
+        Args:
             duration (int): The number of minutes spent meditating.
 
         Returns:
@@ -184,7 +290,7 @@ class Priest(Character):
         """
         Performs an exorcism on a target if enough faith is available.
 
-        Parameters:
+        Args:
             target (str): The target of the exorcism.
 
         Returns:
@@ -200,7 +306,7 @@ class Priest(Character):
         """
         Leads a religious service to inspire the congregation.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -212,7 +318,7 @@ class Priest(Character):
         """
         Offers spiritual guidance to a target.
 
-        Parameters:
+        Args:
             target (str): The target to offer guidance to.
 
         Returns:
