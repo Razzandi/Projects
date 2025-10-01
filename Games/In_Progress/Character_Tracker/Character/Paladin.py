@@ -1,189 +1,175 @@
-from Default_Character import Character
-from CharacterClass import CharacterClass
+from default_character import Character
+from character_class import CharacterClass
 
 class Paladin(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.PALADIN, _level)
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.PALADIN, level)
         self._faith = 100
         self._holy_symbol = "Cross"
-        self._divine_spells = []
+        self._divine_spell_list = []
         self._mount = "Warhorse"
         self._armor_type = "Plate"
         self._sacred_oath = "Oath of Devotion"
-        self._healing_abilities = ["Lay on Hands", "Cure Wounds"]
+        self._healing_ability_list = ["Lay on Hands", "Cure Wounds"]
+
+    # Member variable properties
+    def get_faith(self):
+        """
+        Gets the paladin's current faith.
         
-    # Unique member variables
-    @property
-    def faith(self):
-        """
-        Gets the paladin's faith value.
-
-        Returns:
-            int: The current faith value.
-        """
-        return self._faith
-
-    @faith.setter
-    def faith(self, value):
-        """
-        Sets the paladin's faith value.
-
-        Parameters:
-            value (int): The new faith value.
-
-        Returns:
+        Args: 
             None
+        
+        Returns the current faith of the paladin."""
+        return self._faith
+    
+    def set_faith(self, value):
         """
+        Sets the paladin's faith.
+        
+        Args:
+            value (int): New faith value.
+        
+        Returns:
+            int: Updated faith value."""
         self._faith = value
 
-    @property
-    def holy_symbol(self):
+    def get_holy_symbol(self):
         """
         Gets the paladin's holy symbol.
-
+        
+        Args: 
+            None
+            
         Returns:
-            str: The holy symbol.
-        """
+            str: The paladin's holy symbol."""
         return self._holy_symbol
-
-    @holy_symbol.setter
-    def holy_symbol(self, value):
+    
+    def set_holy_symbol(self, value):
         """
         Sets the paladin's holy symbol.
-
-        Parameters:
-            value (str): The new holy symbol.
-
+        
+        Args:
+            value (str): New holy symbol.
+            
         Returns:
-            None
-        """
+            str: Updated holy symbol."""
         self._holy_symbol = value
 
-    @property
-    def divine_spells(self):
+    def get_divine_spell_list(self):
         """
-        Gets the paladin's list of divine spells.
-
-        Returns:
-            list: The list of divine spells.
-        """
-        return self._divine_spells
-
-    @divine_spells.setter
-    def divine_spells(self, value):
-        """
-        Sets the paladin's list of divine spells.
-
-        Parameters:
-            value (list): The new list of divine spells.
-
-        Returns:
+        Gets the paladin's divine spell list.
+        
+        Args:
             None
+        
+        Returns:
+            list: The list of divine spells known by the paladin."""
+        return self._divine_spell_list
+    
+    def set_divine_spell_list(self, value):
         """
-        self._divine_spells = value
+        Sets the paladin's divine spell list.
+        
+        Args:
+            value (list): New list of divine spells.
+        
+        Returns:
+            list: Updated list of divine spells."""
+        self._divine_spell_list = value
 
-    @property
-    def mount(self):
+    def get_mount(self):
         """
         Gets the paladin's mount.
-
+        
+        Args: 
+            None
+        
         Returns:
-            str: The name of the mount.
-        """
+            str: The type of mount the paladin rides."""
         return self._mount
-
-    @mount.setter
-    def mount(self, value):
+    
+    def set_mount(self, value):
         """
         Sets the paladin's mount.
-
-        Parameters:
-            value (str): The new mount name.
-
+        
+        Args:
+            value (str): New mount type.
+        
         Returns:
-            None
-        """
+            str: Updated mount type."""
         self._mount = value
 
-    @property
-    def armor_type(self):
+    def get_armor_type(self):
         """
         Gets the paladin's armor type.
-
+        
+        Args: 
+            None
+        
         Returns:
-            str: The armor type.
-        """
+            str: The type of armor the paladin wears."""
         return self._armor_type
-
-    @armor_type.setter
-    def armor_type(self, value):
+    
+    def set_armor_type(self, value):
         """
         Sets the paladin's armor type.
-
-        Parameters:
-            value (str): The new armor type.
-
+        
+        Args:
+            value (str): New armor type.
+        
         Returns:
-            None
-        """
+            str: Updated armor type."""
         self._armor_type = value
 
-    @property
-    def sacred_oath(self):
+    def get_sacred_oath(self):
         """
         Gets the paladin's sacred oath.
-
+        
+        Args: 
+            None
+        
         Returns:
-            str: The sacred oath.
-        """
+            str: The paladin's sacred oath."""
         return self._sacred_oath
-
-    @sacred_oath.setter
-    def sacred_oath(self, value):
+    
+    def set_sacred_oath(self, value):
         """
         Sets the paladin's sacred oath.
-
-        Parameters:
-            value (str): The new sacred oath.
-
+        
+        Args:
+            value (str): New sacred oath.
+            
         Returns:
-            None
-        """
+            str: Updated sacred oath."""
         self._sacred_oath = value
 
-    @property
-    def healing_abilities(self):
+    def get_healing_ability_list(self):
         """
-        Gets the paladin's healing abilities.
-
-        Returns:
-            list: The list of healing abilities.
-        """
-        return self._healing_abilities
-
-    @healing_abilities.setter
-    def healing_abilities(self, value):
-        """
-        Sets the paladin's healing abilities.
-
-        Parameters:
-            value (list): The new list of healing abilities.
-
-        Returns:
+        Gets the paladin's healing ability list.
+        
+        Args: 
             None
+            
+        Returns:
+            list: The list of healing abilities known by the paladin."""
+        return self._healing_ability_list
+    
+    def healing_ability_list(self, value):
         """
-        self._healing_abilities = value
+        Sets the paladin's healing ability list.
+        
+        Args:
+            value (list): New list of healing abilities.
+        
+        Returns:
+            list: Updated list of healing abilities."""
+        self._healing_ability_list = value
 
-    # Unique functions
+    # Member functions (actions/verbs)
     def smite(self, target):
         """
         Uses faith to smite a target with holy power.
-
-        Parameters:
-            target (str): The target to smite.
-
-        Returns:
-            None
         """
         if self._faith >= 20:
             self._faith -= 20
@@ -194,14 +180,8 @@ class Paladin(Character):
     def heal(self, target):
         """
         Heals a target using Lay on Hands if available.
-
-        Parameters:
-            target (str): The target to heal.
-
-        Returns:
-            None
         """
-        if "Lay on Hands" in self._healing_abilities:
+        if "Lay on Hands" in self._healing_ability_list:
             print(f"{self._name} heals {target} using Lay on Hands.")
         else:
             print(f"{self._name} does not have healing abilities.")
@@ -209,23 +189,11 @@ class Paladin(Character):
     def mount_horse(self):
         """
         Mounts the paladin's horse.
-
-        Parameters:
-            None
-
-        Returns:
-            None
         """
         print(f"{self._name} mounts their {self._mount}.")
 
     def dismount_horse(self):
         """
         Dismounts from the paladin's horse.
-
-        Parameters:
-            None
-
-        Returns:
-            None
         """
-        print(f"{self._name} dismounts from their {self._mount}.")
+        print(f"{self._name} dismounts from their {self._mount}.")"""

@@ -1,75 +1,202 @@
-from Default_Character import Character
-from CharacterClass import CharacterClass
+from default_character import Character
+from character_class import CharacterClass
 
 class Warrior(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.WARRIOR, _level)
-
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.WARRIOR, level)
         self._strength = 100
         self._endurance = 90
         self._weapon_skill = 85
         self._armor_type = "Heavy"
         self._battle_cry = "For Glory!"
         self._combat_stance = "Aggressive"
-        self._special_moves = ["Power Strike", "Shield Bash"]
+        self._special_move_list = ["Power Strike", "Shield Bash"]
         self._war_horn = "Dragon's Roar"
+
+    # Member variable properties
+
+    def get_strength(self):
+        """
+        Gets the strength of the warrior.
+
+        Args:
+            None
         
-    # Unique member variables
-    @property
-    def strength(self):
+        Returns:
+            int: The strength value."""
         return self._strength
-    @strength.setter
-    def strength(self, value):
+    
+    def set_strength(self, value):
+        """
+        Sets the strength of the warrior.
+        
+        Args:
+            value (int): The new strength value.
+            
+        Returns:
+            None"""
         self._strength = value
-    @property
-    def endurance(self):
+
+    def get_endurance(self):
+        """
+        Gets the endurance of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            int: The endurance value."""
         return self._endurance
-    @endurance.setter
-    def endurance(self, value):
+    
+    def set_endurance(self, value):
+        """
+        Sets the endurance of the warrior.
+        
+        Args:
+            value (int): The new endurance value.
+            
+        Returns:
+            None"""
         self._endurance = value
-    @property
-    def weapon_skill(self):
+
+    def get_weapon_skill(self):
+        """
+        Gets the weapon skill of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            int: The weapon skill value."""
         return self._weapon_skill
-    @weapon_skill.setter
-    def weapon_skill(self, value):
+    
+    def set_weapon_skill(self, value):
+        """
+        Sets the weapon skill of the warrior.
+        
+        Args:
+            value (int): The new weapon skill value.
+            
+        Returns:
+            None"""
         self._weapon_skill = value
-    @property
-    def armor_type(self):
+
+    def get_armor_type(self):
+        """
+        Gets the armor type of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            str: The armor type."""
         return self._armor_type
-    @armor_type.setter
-    def armor_type(self, value):
+    
+    def set_armor_type(self, value):
+        """
+        Sets the armor type of the warrior.
+        
+        Args:
+            value (str): The new armor type.
+            
+        Returns:
+            None"""
         self._armor_type = value
-    @property
-    def battle_cry(self):
+
+    def get_battle_cry(self):
+        """
+        Gets the battle cry of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            str: The battle cry."""
         return self._battle_cry
-    @battle_cry.setter
-    def battle_cry(self, value):
+    
+    def set_battle_cry(self, value):
+        """
+        Sets the battle cry of the warrior.
+        
+        Args:
+            value (str): The new battle cry.
+            
+        Returns:
+            None"""
         self._battle_cry = value
-    @property
-    def combat_stance(self):
+
+    def get_combat_stance(self):
+        """
+        Gets the combat stance of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            str: The combat stance."""
         return self._combat_stance
-    @combat_stance.setter
-    def combat_stance(self, value):
+    
+    def set_combat_stance(self, value):
+        """
+        Sets the combat stance of the warrior.
+        
+        Args:
+            value (str): The new combat stance.
+            
+        Returns:
+            None"""
         self._combat_stance = value
-    @property
-    def special_moves(self):
-        return self._special_moves
-    @special_moves.setter
-    def special_moves(self, value):
-        self._special_moves = value
-    @property
-    def war_horn(self):
+
+    def get_special_move_list(self):
+        """
+        Gets the list of special moves of the warrior.
+        
+        Args:
+            None
+            
+        Returns:
+            list: The list of special moves."""
+        return self._special_move_list
+    
+    def set_special_move_list(self, value):
+        """
+        Sets the list of special moves of the warrior.
+        
+        Args:
+            value (list): The new list of special moves.
+        
+        Returns:
+            None"""
+        self._special_move_list = value
+
+    def get_war_horn(self):
+        """
+        Gets the war horn of the warrior.
+    
+        Args:
+            None
+        
+        Returns:
+            str: The war horn."""
         return self._war_horn
-    @war_horn.setter
-    def war_horn(self, value):
+    
+    def set_war_horn(self, value):
+        """
+        Sets the war horn of the warrior.
+        
+        Args:
+            value (str): The new war horn.
+            
+        Returns:
+            None"""
         self._war_horn = value
 
-    # Unique functions
-    def berserk(self):
+    # Member functions (actions/verbs)
+    def go_berserk(self):
         """
         Increases strength and decreases endurance if enough endurance is available.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -86,7 +213,7 @@ class Warrior(Character):
         """
         Switches the warrior's combat stance to defensive.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -99,13 +226,13 @@ class Warrior(Character):
         """
         Uses a special move if known.
 
-        Parameters:
+        Args:
             move (str): The name of the special move.
 
         Returns:
             str: Message about using the special move or not knowing it.
         """
-        if move in self._special_moves:
+        if move in self._special_move_list:
             return f"{self.name} uses {move}!"
         else:
             return f"{move} is not a known special move."
@@ -114,7 +241,7 @@ class Warrior(Character):
         """
         Blows the warrior's war horn.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -126,7 +253,7 @@ class Warrior(Character):
         """
         Trains to increase strength and endurance.
 
-        Parameters:
+        Args:
             hours (int): Number of hours spent training.
 
         Returns:
@@ -140,7 +267,7 @@ class Warrior(Character):
         """
         Rests to recover endurance.
 
-        Parameters:
+        Args:
             hours (int): Number of hours spent resting.
 
         Returns:
@@ -153,7 +280,7 @@ class Warrior(Character):
         """
         Shouts the warrior's battle cry.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -165,7 +292,7 @@ class Warrior(Character):
         """
         Changes the warrior's combat stance.
 
-        Parameters:
+        Args:
             stance (str): The new combat stance.
 
         Returns:
@@ -178,7 +305,7 @@ class Warrior(Character):
         """
         Equips a new type of armor.
 
-        Parameters:
+        Args:
             armor (str): The type of armor to equip.
 
         Returns:
@@ -191,7 +318,7 @@ class Warrior(Character):
         """
         Wields a weapon with the warrior's skill level.
 
-        Parameters:
+        Args:
             weapon (str): The weapon to wield.
 
         Returns:
@@ -203,7 +330,7 @@ class Warrior(Character):
         """
         Shows the current status of the warrior.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -215,7 +342,7 @@ class Warrior(Character):
         """
         Attacks a target and calculates damage.
 
-        Parameters:
+        Args:
             target (str): The target to attack.
 
         Returns:
@@ -228,7 +355,7 @@ class Warrior(Character):
         """
         Defends against an attacker and calculates block chance.
 
-        Parameters:
+        Args:
             attacker (str): The attacker to defend against.
 
         Returns:
@@ -237,11 +364,11 @@ class Warrior(Character):
         block_chance = self._endurance * 0.4 + self._weapon_skill * 0.2
         return f"{self._name} defends against {attacker} with a block chance of {block_chance}%."
     
-    def rally(self, allies):
+    def rally_allies(self, allies):
         """
         Rallies allies to fight with renewed vigor.
 
-        Parameters:
+        Args:
             allies (list): List of allies to rally.
 
         Returns:
@@ -249,11 +376,11 @@ class Warrior(Character):
         """
         return f"{self._name} rallies the allies: {', '.join(allies)} to fight with renewed vigor!"
     
-    def intimidate(self, enemy):
+    def intimidate_enemy(self, enemy):
         """
         Intimidates an enemy to lower their morale.
 
-        Parameters:
+        Args:
             enemy (str): The enemy to intimidate.
 
         Returns:
@@ -265,7 +392,7 @@ class Warrior(Character):
         """
         Forges a new weapon for battle.
 
-        Parameters:
+        Args:
             weapon_type (str): The type of weapon to forge.
 
         Returns:
@@ -277,7 +404,7 @@ class Warrior(Character):
         """
         Participates in a combat tournament.
 
-        Parameters:
+        Args:
             tournament_name (str): The name of the tournament.
 
         Returns:
@@ -289,7 +416,7 @@ class Warrior(Character):
         """
         Leads a charge into battle.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -301,7 +428,7 @@ class Warrior(Character):
         """
         Trains with a mentor to increase strength and weapon skill.
 
-        Parameters:
+        Args:
             mentor_name (str): The mentor's name.
             hours (int): Number of hours spent training.
 
@@ -316,7 +443,7 @@ class Warrior(Character):
         """
         Participates in a battle.
 
-        Parameters:
+        Args:
             battle_name (str): The name of the battle.
 
         Returns:
@@ -328,7 +455,7 @@ class Warrior(Character):
         """
         Conquers an enemy.
 
-        Parameters:
+        Args:
             enemy_name (str): The name of the enemy.
 
         Returns:
@@ -340,7 +467,7 @@ class Warrior(Character):
         """
         Defends a territory against threats.
 
-        Parameters:
+        Args:
             territory_name (str): The name of the territory.
 
         Returns:
@@ -352,7 +479,7 @@ class Warrior(Character):
         """
         Leads a siege on a fortress.
 
-        Parameters:
+        Args:
             fortress_name (str): The name of the fortress.
 
         Returns:
@@ -360,18 +487,18 @@ class Warrior(Character):
         """
         return f"{self._name} leads the siege on {fortress_name}, demonstrating strategic prowess!"
     
-    def train_special_move(self, move_name):
+    def learn_special_move(self, move_name):
         """
         Learns a new special move if not already known.
 
-        Parameters:
+        Args:
             move_name (str): The name of the special move.
 
         Returns:
             str: Message about learning the special move or already knowing it.
         """
-        if move_name not in self._special_moves:
-            self._special_moves.append(move_name)
+        if move_name not in self._special_move_list:
+            self._special_move_list.append(move_name)
             return f"{self._name} has learned a new special move: {move_name}!"
         else:
             return f"{self._name} already knows the special move: {move_name}."

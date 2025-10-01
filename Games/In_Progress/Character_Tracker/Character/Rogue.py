@@ -1,5 +1,5 @@
-from Default_Character import Character
-from CharacterClass import CharacterClass
+from default_character import Character
+from character_class import CharacterClass
 
 class Rogue(Character):
     def __init__(self, _name, _level=1):
@@ -15,53 +15,180 @@ class Rogue(Character):
         self._evasion_ability = 80
         
     # Unique member variables
-    @property
-    def stealth(self):
+    def get_stealth(self):
+        """
+        Gets the rogue's current stealth level.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The current stealth level of the rogue."""
         return self._stealth
-    @stealth.setter
-    def stealth(self, value):
+    
+    def set_stealth(self, value):
+        """
+        Sets the rogue's stealth level.
+        
+        Args:
+            value (int): New stealth level.
+            
+        Returns:
+            int: Updated stealth level."""
         self._stealth = value
-    @property
-    def agility(self):
+
+    def get_agility(self):
+        """
+        Gets the rogue's current agility.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The current agility of the rogue."""
         return self._agility
-    @agility.setter
-    def agility(self, value):
+    
+    def set_agility(self, value):
+        """
+        Sets the rogue's agility.
+        
+        Args:
+            value (int): New agility value.
+            
+        Returns:
+            int: Updated agility value."""
         self._agility = value
-    @property
-    def lockpicking_skill(self):
+
+    def get_lockpicking_skill(self):
+        """
+        Gets the rogue's lockpicking skill level.
+        
+        Args: 
+            None
+    
+        Returns:
+            int: The current lockpicking skill level of the rogue."""
         return self._lockpicking_skill
-    @lockpicking_skill.setter
-    def lockpicking_skill(self, value):
+    
+    def set_lockpicking_skill(self, value):
+        """
+        Sets the rogue's lockpicking skill level.
+        
+        Args:
+            value (int): New lockpicking skill level.
+        
+        Returns:
+            int: Updated lockpicking skill level."""
         self._lockpicking_skill = value
-    @property
-    def backstab_damage(self):
+
+    def get_backstab_damage(self):
+        """
+        Gets the rogue's backstab damage.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The backstab damage of the rogue."""
         return self._backstab_damage
-    @backstab_damage.setter
-    def backstab_damage(self, value):
+    
+    def set_backstab_damage(self, value):
+        """
+        Sets the rogue's backstab damage.
+        
+        Args:
+            value (int): New backstab damage value.
+            
+        Returns:
+            int: Updated backstab damage value."""
         self._backstab_damage = value
-    @property
-    def preferred_weapon(self):
+
+    def get_preferred_weapon(self):
+        """
+        Gets the rogue's preferred weapon.
+        
+        Args: 
+            None
+            
+        Returns:
+            str: The preferred weapon of the rogue."""
         return self._preferred_weapon
-    @preferred_weapon.setter
-    def preferred_weapon(self, value):
+    
+    def set_preferred_weapon(self, value):
+        """
+        Sets the rogue's preferred weapon.
+        
+        Args:
+            value (str): New preferred weapon.
+            
+        Returns:
+            str: Updated preferred weapon."""
         self._preferred_weapon = value
-    @property
-    def thieves_guild_rank(self):
+
+    def get_thieves_guild_rank(self):
+        """
+        Gets the rogue's Thieves Guild rank.
+        
+        Args: 
+            None
+            
+        Returns:
+            str: The Thieves Guild rank of the rogue."""
         return self._thieves_guild_rank
-    @thieves_guild_rank.setter
-    def thieves_guild_rank(self, value):
+    
+    def set_thieves_guild_rank(self, value):
+        """
+        Sets the rogue's Thieves Guild rank.
+        
+        Args:
+            value (str): New Thieves Guild rank.
+        
+        Returns:
+            str: Updated Thieves Guild rank."""
         self._thieves_guild_rank = value
-    @property
-    def traps_disarmed(self):
+
+    def get_traps_disarmed(self):
+        """
+        Gets the number of traps disarmed by the rogue.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The number of traps disarmed by the rogue."""
         return self._traps_disarmed
-    @traps_disarmed.setter
-    def traps_disarmed(self, value):
+    
+    def set_traps_disarmed(self, value):
+        """
+        Sets the number of traps disarmed by the rogue.
+        
+        Args:
+            value (int): New number of traps disarmed.
+            
+        Returns:
+            int: Updated number of traps disarmed."""
         self._traps_disarmed = value
-    @property
-    def evasion_ability(self):
+
+    def get_evasion_ability(self):
+        """
+        Gets the rogue's evasion ability.
+        
+        Args: 
+            None
+            
+        Returns:
+            int: The evasion ability of the rogue."""
         return self._evasion_ability
-    @evasion_ability.setter
-    def evasion_ability(self, value):
+    
+    def set_evasion_ability(self, value):
+        """
+        Sets the rogue's evasion ability.
+        
+        Args:
+            value (int): New evasion ability value.
+        
+        Returns:
+            int: Updated evasion ability value."""
         self._evasion_ability = value
 
     # Unique functions
@@ -69,7 +196,7 @@ class Rogue(Character):
         """
         Performs a sneak attack on the target, dealing backstab damage.
 
-        Parameters:
+        Args:
             target (str): The target to attack.
 
         Returns:
@@ -82,7 +209,7 @@ class Rogue(Character):
         """
         Attempts to pick a lock based on the lock's difficulty.
 
-        Parameters:
+        Args:
             lock_difficulty (int): The difficulty level of the lock.
 
         Returns:
@@ -97,7 +224,7 @@ class Rogue(Character):
         """
         Attempts to disarm a trap based on its difficulty.
 
-        Parameters:
+        Args:
             trap_difficulty (int): The difficulty level of the trap.
 
         Returns:
@@ -113,7 +240,7 @@ class Rogue(Character):
         """
         Attempts to evade an attack using evasion ability.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -126,7 +253,7 @@ class Rogue(Character):
         """
         Joins the Thieves Guild with a specified rank.
 
-        Parameters:
+        Args:
             rank (str): The rank to join with.
 
         Returns:
@@ -139,7 +266,7 @@ class Rogue(Character):
         """
         Uses stealth for a specified duration.
 
-        Parameters:
+        Args:
             duration (int): The number of minutes to remain undetected.
 
         Returns:
@@ -151,7 +278,7 @@ class Rogue(Character):
         """
         Attacks a target with the rogue's preferred weapon.
 
-        Parameters:
+        Args:
             target (str): The target to attack.
 
         Returns:
@@ -163,7 +290,7 @@ class Rogue(Character):
         """
         Increases the rogue's agility by a specified amount.
 
-        Parameters:
+        Args:
             amount (int): The amount to increase agility by.
 
         Returns:
@@ -176,7 +303,7 @@ class Rogue(Character):
         """
         Displays the current status of the rogue.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -188,7 +315,7 @@ class Rogue(Character):
         """
         Uses agility and stealth to flee from danger.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -200,7 +327,7 @@ class Rogue(Character):
         """
         Attempts to steal from a target using stealth skills.
 
-        Parameters:
+        Args:
             target (str): The target to steal from.
 
         Returns:
@@ -212,7 +339,7 @@ class Rogue(Character):
         """
         Scouts an area to gather information without being seen.
 
-        Parameters:
+        Args:
             area (str): The area to scout.
 
         Returns:
@@ -224,7 +351,7 @@ class Rogue(Character):
         """
         Creates a distraction to divert attention.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -236,7 +363,7 @@ class Rogue(Character):
         """
         Hides in the shadows for a specified duration.
 
-        Parameters:
+        Args:
             duration (int): The number of minutes to hide.
 
         Returns:
@@ -248,7 +375,7 @@ class Rogue(Character):
         """
         Trains lockpicking for a specified number of hours.
 
-        Parameters:
+        Args:
             hours (int): The number of hours to train.
 
         Returns:
@@ -261,7 +388,7 @@ class Rogue(Character):
         """
         Upgrades backstab damage by a specified amount.
 
-        Parameters:
+        Args:
             amount (int): The amount to increase backstab damage by.
 
         Returns:
@@ -274,7 +401,7 @@ class Rogue(Character):
         """
         Improves evasion ability by a specified amount.
 
-        Parameters:
+        Args:
             amount (int): The amount to increase evasion ability by.
 
         Returns:
@@ -287,7 +414,7 @@ class Rogue(Character):
         """
         Completes a Thieves Guild mission.
 
-        Parameters:
+        Args:
             mission_name (str): The name of the mission.
 
         Returns:
@@ -299,7 +426,7 @@ class Rogue(Character):
         """
         Bribes a guard with a specified amount of gold.
 
-        Parameters:
+        Args:
             amount (int): The amount of gold to bribe with.
 
         Returns:
@@ -311,7 +438,7 @@ class Rogue(Character):
         """
         Finds a hidden treasure and adds it to the rogue's loot.
 
-        Parameters:
+        Args:
             treasure_name (str): The name of the treasure.
 
         Returns:
@@ -323,7 +450,7 @@ class Rogue(Character):
         """
         Sets a trap to protect the hideout or ambush enemies.
 
-        Parameters:
+        Args:
             trap_type (str): The type of trap to set.
 
         Returns:
@@ -335,7 +462,7 @@ class Rogue(Character):
         """
         Attempts to lockpick a chest based on its difficulty.
 
-        Parameters:
+        Args:
             chest_difficulty (int): The difficulty level of the chest.
 
         Returns:
@@ -351,7 +478,7 @@ class Rogue(Character):
         """
         Performs a daring backflip to escape from a tight situation.
 
-        Parameters:
+        Args:
             None
 
         Returns:
@@ -363,7 +490,7 @@ class Rogue(Character):
         """
         Uses Shadow Step to teleport behind a target for a surprise attack.
 
-        Parameters:
+        Args:
             target (str): The target to teleport behind.
 
         Returns:
@@ -375,7 +502,7 @@ class Rogue(Character):
         """
         Silently eliminates a target without making a sound.
 
-        Parameters:
+        Args:
             target (str): The target to eliminate.
 
         Returns:

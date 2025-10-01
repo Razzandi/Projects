@@ -1,114 +1,141 @@
-from Default_Character import Character
-from CharacterClass import CharacterClass
+from default_character import Character
+from character_class import CharacterClass
 
 class Mage(Character):
-    def __init__(self, _name, _level=1):
-        super().__init__(_name, CharacterClass.MAGE, _level)
+    def __init__(self, name, level=1):
+        super().__init__(name, CharacterClass.MAGE, level)
         self._mana = 100
         self._spellbook = []
         self._familiar = None
         self._elemental_affinity = "Fire"
-        self._rituals = []
+        self._ritual_list = []
 
-    # Unique member variables
-    @property
-    def spellbook(self):
+    # Member variable properties
+    
+    def get_mana(self):
+        """
+        Gets the mage's current mana.
+
+        Args: 
+            None
+
+        Returns the current mana of the mage."""
+        return self._mana
+
+    def set_mana(self, value):
+        """
+        Sets the mage's mana.
+        
+        Args:
+            value (int): New mana value.
+            
+        Returns:
+            int: Updated mana value.
+        """
+        self._mana = value
+
+    def get_spellbook(self):
         """
         Gets the mage's spellbook.
+
+        Args: 
+            None
 
         Returns:
             list: The list of spells known by the mage.
         """
         return self._spellbook
-
-    @spellbook.setter
-    def spellbook(self, value):
+    
+    def set_spellbook(self, value):
         """
         Sets the mage's spellbook.
 
-        Parameters:
+        Args: 
             value (list): The new list of spells for the mage.
-        
+
         Returns:
             None
         """
         self._spellbook = value
 
-    @property
-    def familiar(self):
+    def get_familiar(self):
         """
         Gets the mage's familiar.
+
+        Args: 
+            None
 
         Returns:
             str or None: The name of the mage's familiar, or None if not set.
         """
         return self._familiar
-
-    @familiar.setter
-    def familiar(self, value):
+    
+    def set_familiar(self, value):
         """
         Sets the mage's familiar.
 
-        Parameters:
+        Args: 
             value (str): The name of the familiar.
-        
+
         Returns:
             None
         """
         self._familiar = value
 
-    @property
-    def elemental_affinity(self):
+    def get_elemental_affinity(self):
         """
         Gets the mage's elemental affinity.
+
+        Args:
+            None
 
         Returns:
             str: The mage's elemental affinity.
         """
         return self._elemental_affinity
-
-    @elemental_affinity.setter
-    def elemental_affinity(self, value):
+    
+    def set_elemental_affinity(self, value):
         """
         Sets the mage's elemental affinity.
 
-        Parameters:
+        Args:
             value (str): The new elemental affinity.
-        
+
         Returns:
             None
         """
         self._elemental_affinity = value
 
-    @property
-    def rituals(self):
+    def get_ritual_list(self):
         """
         Gets the mage's rituals.
+
+        Args:
+            None
 
         Returns:
             list: The list of rituals known by the mage.
         """
-        return self._rituals
-
-    @rituals.setter
-    def rituals(self, value):
+        return self._ritual_list
+    
+    def set_ritual_list(self, value):
         """
         Sets the mage's rituals.
 
         Parameters:
             value (list): The new list of rituals for the mage.
-        
+
         Returns:
             None
         """
-        self._rituals = value
+        self._ritual_list = value
 
-    # Unique functions
+    # Member functions (actions/verbs)
     def cast_spell(self, spell):
         """
         Casts a spell from the mage's spellbook if enough mana is available.
 
-        Parameters:
+        Args:
             spell (str): The name of the spell to cast.
 
         Returns:
@@ -124,7 +151,7 @@ class Mage(Character):
         """
         Summons a familiar for the mage.
 
-        Parameters:
+        Args:
             familiar_name (str): The name of the familiar to summon.
 
         Returns:
